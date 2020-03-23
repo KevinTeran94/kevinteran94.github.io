@@ -1,0 +1,427 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Kevin Teran Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+		
+			<header id="header">
+				<a href="index.html" class="title">Kevin Wait for it.......................... Teran</a>
+				<nav>
+					<ul>
+						<li><a href="index.html">Home</a></li>
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<section id="main" class="wrapper">
+						<div class="inner">
+							<h1 class="major">Requirements Analysis and Design</h1>
+                            <h2>Introduction</h2>
+
+                            <p><b>Purpose</b></p>
+                            <p>
+                                The purpose of this document is to present the high-level software requirements for the Tea subscription box app. The features of the system will be described in detail and various diagrams will be created to ensure the users of this document have the same understanding of the system. The use cases of the system will also be discussed in this document. The intended audiences for this document are the stakeholders and the developers of the app. 
+                                <br>
+                                <br>
+                                The following diagrams will be in this document:
+                            </p>
+                            <ul>
+                                <li>Normalized Data Model Diagram</li>
+                                <li>Activity Diagrams</li>
+                                <li>Sequence Diagrams</li>
+                                <li>UML Class Diagram</li>
+                                <li>Data Flow Diagram</li>
+                            </ul>
+
+                            <p><b>Scope</b></p>
+                            <p>In scope:</p>
+                            <ul>
+                                <li>This app will have a simple, easy to navigate user interface
+                                    <ul>
+                                        <li>This will keep users engaged with the app and have a positive experience with the app</li>
+                                        <li>The app must be simple enough for any stakeholder to use no matter their knowledge of technology</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    App will bridge the gap between customers and tea company
+                                    <ul>
+                                        <li>Instead of having to sell the company’s product through specialty stores/grocery store, product is sold directly to customer </li>
+                                    </ul>
+                                </li>
+                                <li>Customers will be able to view subscription plans but will not be able to rate or order until they have registered</li>
+                                <li>The app will have a registration/login system where customers can register/login and admins can login. The appropriate view will be presented based on account type and successful login</li>
+                                <li>Customers will be able to manage their orders through the app
+                                    <ul>
+                                        <li>This will reduce customer service costs </li>
+                                    </ul>
+                                </li>
+                                <li>Customers will be able to edit their profile information (name, address, password etc.)</li>
+                                <li>Customers will be able to leave reviews for subscription plans only if they have ordered it
+                                    <ul>
+                                        <li>This will prevent fraudulent reviews </li>
+                                    </ul>
+                                </li>
+                                <li>Admin account will be able to view customer profiles</li>
+                                <li>Admins will be able to manager inventory through the app</li>
+                                <li>Analytics will be created based on the information from the data base for management use
+                                    <ul>
+                                        <li>The analytics will provide a picture of how the company is doing in the market</li>
+                                        <li>Sample analytics: most ordered plan, least ordered plan, best reviewed plan etc</li>
+                                    </ul>
+                                </li>
+                                <li>A sample database will be designed for the app
+                                    <ul>
+                                        <li>Since there is currently no database to use, one will be designed and used for the app</li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+                            <p>Out of Scope:</p>
+                            <ul>
+                                <li>
+                                    This app will not cover human resource functions
+                                    <ul>
+                                        <li>Such as employee self-service, performance management, scheduling etc</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    Accounting functions
+                                    <ul>
+                                        <li>Benefits, compensation, accounts payable, billing, etc</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    Shipping and handling of products
+                                    <ul>
+                                        <li>The shipping and handling of products will be handled by the company as this app will not cover its coordination</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    Hosting of the application 
+                                    <ul>
+                                        <li>oThe app will be provided in its entirety and it will be up to the company to choose where it will be hosted </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    Training staff to use application
+                                    <ul>
+                                        <li>The project will produce design documents but not training documents. </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    Integration of company database into app
+                                    <ul>
+                                        <li>The company will be responsible for getting their database to function with the app</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    Integration of other systems into the app
+                                    <ul>
+                                        <li>The project currently does not have plans to integrate other department systems into the app.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+                            <h2>System Overview</h2>
+
+                            <h3>Project Perspective</h3>
+                            <p>The Tea subscription box app does not build off any current system and is therefore a new self-contained system as far as the development team is concerned. Whether is replaces an existing system depends on the company’s decision</p>
+
+                            <h3>System Context</h3>
+                            <p>The app will address three main strategic issues:</p>
+                            <p><b>Attract potential customers directly</b>:</p>
+                            <ul>
+                                <li>This will be achieved by the app providing an easy to use interface, direct communication with customers (no middleman i.e., grocery stores, specialty stores)</li>
+                                <li>Plenty of information in app about various teas and their brewing methods</li>
+                                <li>Many detailed subscription plans to choose from.</li>
+                            </ul>
+
+                            <p><b>Better understanding of the market</b>:</p>
+                            <ul>
+                                <li>Data gathered by the app will be stored and used to generate relevant analytics</li>
+                                <li>Analytics will provide a picture of the current market</li>
+                                <li>Managers will be able to access analytics through their admin account</li>
+                            </ul>
+
+                            <p><b>Management of inventory</b>:</p>
+                            <ul>
+                                <li>Managers will be able to view inventory and relevant analytics whenever they want through their admin account </li>
+                            </ul>
+
+                            <h3>General Constraints</h3>
+                            <ul>
+                                <li>
+                                    The development tool of choice is currently android studio.
+                                    <ul>
+                                        <li>However other mobile framworks are being researched</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    The app must be installed onto the customers phone
+                                    <ul>
+                                        <li>The memory requirements must be kept low to not inconvenience the customer with memory worries </li>
+                                    </ul>
+                                </li>
+                                <li>Response time for accessing the application features should be low</li>
+                                <li>Customer must be familiar with using the app/play store</li>
+                                <li>
+                                    A sample database will be designed and used by the team to complete the project
+                                    <ul>
+                                        <li>The implementation of another dataset after the completion of the project will fall on the tea company </li>
+                                    </ul>
+                                </li>
+                                <li>The company can keep up with increased and changing demand of customers</li>
+                                <li>The products offered through the app is limited to the company’s products</li>
+                            </ul>
+
+
+                            <h3>Assumptions and Dependencies</h3>
+                            <p><b>Assumptions:</b></p>
+                            <ul>
+                                <li>
+                                    Application will be developed as a mobile app. 
+                                    <ul>
+                                        <li>The team is currently looking into mobile frameworks that may be used</li>
+                                        <li>Should the team not be satisfied with the tools they research, discussion will be held to develop the project as a web app.</li>
+                                        <li>The core features will remain the same</li>
+                                    </ul>
+                                </li>
+                                <li>Project team members will remain in constant contact and are available as needed to complete project tasks and objectives.</li>
+                                <li>Employees of the company are willing to embrace the application.</li>
+                                <li>The company will be able to correctly implement their database into the application</li>
+                                <li>The company has a proper distribution chain to meet the demands of the app</li>
+                            </ul>
+
+                            <p><b>Dependencies:</b></p>
+                            <ul>
+                                <li>
+                                    Technology: 
+                                    <ul>
+                                        <li>The team currently has a limited knowledge on developing on the mobile platform. However, the team is researching the various tools and frameworks that can be used with the platform to meet their needs and develop the proposed app</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    Competition: 
+                                    <ul>
+                                        <li>Similar applications exist however they offer other products. It is possible that those companies may be developing an application like this one since they have the experience and means. However, this will motivate the team to innovate and create a higher-quality app</li>
+                                    </ul>
+                                </li>
+                                <li>Customer satisfaction/demands: This dependency is crucial for the app to thrive. The application must be designed with user-friendly features and meet the on-going/changing demands of customers</li>
+
+                            </ul>
+
+                            <h2>Functional Requirements</h2>
+                            <h3>Features</h3>
+                            <img src="images/viewContent.jpg" alt="" />
+                            <br>
+                            <img src="images/search.jpg" alt="" />
+                            <br>
+                            <img src="images/register.jpg" alt="" />
+                            <br>
+                            <img src="images/login.jpg" alt="" />
+                            <br>
+                            <img src="images/edit.jpg" alt="" />
+                            <br>
+                            <img src="images/placeOrder.jpg" alt="" />
+                            <br>
+                            <img src="images/feedback.jpg" alt="" />
+                            <br>
+                            <img src="images/business.jpg" alt="" />
+                            <br>
+                            <img src="images/crud.jpg" alt="" />
+
+                            <h3>Use Cases</h3>
+                            <img src="images/useCases.jpg"/>
+                            <br>
+                            <h4>Use Case 1: Guest/Unregistered User</h4>
+                            <br>
+                            <img src="images/viewContentGuest.jpg"/>
+                            <br>
+                            <img src="images/searchGuest.jpg"/>
+                            <br>
+                            <img src="images/registerGuest.jpg"/>
+                            <br>
+                            <h4>Use Case 2: Registered User</h4>
+                            <br>
+                            <img src="images/viewContentUser.jpg"/>
+                            <br>
+                            <img src="images/searchUser.jpg"/>
+                            <br>
+                            <img src="images/editUser.jpg"/>
+                            <br>
+                            <img src="images/placeOrderUser.jpg"/>
+                            <br>
+                            <img src="images/feedbackUser.jpg"/>
+                            <br>
+                            <h4>Use Case 3: Admin</h4>
+                            <br>
+                            <img src="images/businessAdmin.jpg"/>
+                            <br>
+                            <img src="images/crudAdmin.jpg"/>
+                            <br>
+                            <h3>Data Modeling and Analysis</h3>
+                            <h4>Normalized Data Model Diagram</h4>
+                            <br>
+                            <img src="images/normal.jpg"/>
+                            <br>
+                            <h4>Activity Diagrams</h4>
+                            <br>
+                            <img src="images/act1.jpg"/>
+                            <br>
+                            <img src="images/act2.jpg"/>
+                            <br>
+                            <img src="images/act3.jpg"/>
+                            <br>
+                            <img src="images/act4.jpg"/>
+                            <br>
+                            <img src="images/act5.jpg"/>
+                            <br>
+                            <img src="images/act6.jpg"/>
+                            <br>
+                            <img src="images/act7.jpg"/>
+                            <br>
+                            <img src="images/act8.jpg"/>
+                            <br>
+                            
+                            <h4>Sequence Diagrams</h4>
+                            <br>
+                            <img src="images/seq1.jpg"/>
+                            <br>
+                            <img src="images/seq2.jpg"/>
+                            <br>
+                            <img src="images/seq3.jpg"/>
+                            <br>
+                            <img src="images/seq4.jpg"/>
+                            <br>
+                            <img src="images/seq5.jpg"/>
+                            <br>
+                            <img src="images/seq6.jpg"/>
+                            <br>
+                            <img src="images/seq7.jpg"/>
+                            <br>
+                            <img src="images/seq8.jpg"/>
+                            <br>
+                            <img src="images/seq9.jpg"/>
+                            <br>
+                            <img src="images/seq10.jpg"/>
+                            <br>
+                            <img src="images/seq11.jpg"/>
+                            <br>
+                            
+                            <h4>UML class Diagram</h4>
+                            <br>
+                            <img src="images/uml.jpg"/>
+                            <br>
+                            <br>
+                            
+                            <h4>Process Modelling</h4>
+                            <p>The following are data flow diagrams for the proposed system</p>
+                            <br>
+                            <img src="images/df1.jpg"/>
+                            <br>
+                            <img src="images/df2.jpg"/>
+                            <br>
+                            <img src="images/df3.jpg"/>
+                            <br>
+                            <img src="images/df4.jpg"/>
+                            <br>
+                            <img src="images/df5.jpg"/>
+                            <br>
+                            <img src="images/df6.jpg"/>
+                            <br>
+                            <img src="images/df7.jpg"/>
+                            <br>
+                            <img src="images/df8.jpg"/>
+                            <br>
+                            <img src="images/df9.jpg"/>
+                            <br>
+                            <img src="images/df10.jpg"/>
+                            <br>
+                            <img src="images/df11.jpg"/>
+                            <br>
+                            <img src="images/df12.jpg"/>
+                            <br>
+                            <img src="images/df13.jpg"/>
+                            
+                            <h2>Non-Functional Requirments</h2>
+                            <p>Here are the Non-functional the team has identified: </p>
+                            <ul>
+                                <li>App will be simple enough to use that the less-technology skilled people will have no trouble with the app</li>
+                                <li>The app will be available 24/7</li>
+                                <li>The system will be fully accessible through the app</li>
+                                <li>The system must be able to support all customers without affecting performance. (Predicted number of users has not be decided yet)</li>
+                                <li>The source code of the system will be written in a modular so that code can be easily maintained</li>
+                                <li>All data will be stored on a secure remote server</li>
+                                <li>All data will be validated to ensure integrity of the system</li>
+                                <li>User data will not be given any third parties</li>
+                            </ul>
+
+                            <h2>Logical Database Requirements</h2>
+                            <p>
+                                A database designed by the team will be used. The normalized data model diagram in 3.3 has the logical requirements for data formats and their relationships. Currently the required storage capabilities are unknown, but the team predicts it will not be a large amount of required storage. As for data retention, the team has decided that all records must be stored indefinitely to create accurate analytics of products. Ultimately the decision of storage capabilities and data retention will fall on the tea company. All data will be validated before stored in the database to ensure data integrity.
+                            </p>
+
+                            <h2>Approval</h2>
+                            <table class="alt">
+                                <tbody>
+                                    <tr>
+                                        <td><b>Project Role</b></td>
+                                        <td><b>Name</b></td>
+                                        <td><b>Date</b></td> 
+                                    <tr>
+                                        <td>Team Leader</td>
+                                        <td>My Thuy Trang Le</td>
+                                        <td>11/10/2019</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Team Member</td>
+                                        <td>Chau Bui</td>
+                                        <td>11/10/2019</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Team Member</td>
+                                        <td>Kevin Teran</td>
+                                        <td>11/10/2019</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            
+
+
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>Kevin Teran</li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
